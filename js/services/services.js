@@ -8,6 +8,18 @@ window.getService = function(service){
 /* Services */
 var Services = angular.module('socialcomputing.services', []);
 
+Services.service("Apps",function($http){
+	var Apps = { 
+		loading: true 
+	};
+	$http.get('apps.json').then(function(res){
+		Apps.apps = res.data.apps;    
+		Apps.categories = res.data.categories;    
+		delete Apps.loading;            
+    });
+	return Apps;
+});
+
 Services.service('Data',function($http){
 	function new_Endpoint( url , post_data ){
 		return {

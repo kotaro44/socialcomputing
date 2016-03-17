@@ -2,11 +2,11 @@
 
 // Declare app level module which depends on filters, and services
 var app = angular.module('socialcomputing', [
-  'socialcomputing.filters',
-  'socialcomputing.services',
-  'socialcomputing.directives',
-  'socialcomputing.controllers',
-  'ngRoute'
+    'socialcomputing.filters',
+    'socialcomputing.services',
+	'socialcomputing.directives',
+	'socialcomputing.controllers',
+	'ngRoute'
 ]);
 
 app.config(['$routeProvider',function($routeProvider) {

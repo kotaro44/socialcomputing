@@ -1,0 +1,14 @@
+<div class="row market-apps" ng-if="apps.length">
+	<h3>{{name}}</h3>
+	<div class="apps-wrapper" smooth-scroll
+    duration="800"
+    easing="easeInQuint"
+    offset="120">
+		<ul>
+			<li ng-repeat="app in apps" ng-if="app.category==cid">
+				<app-preview  app="app"></app-preview>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

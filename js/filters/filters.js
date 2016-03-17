@@ -87,3 +87,16 @@ Filters.filter('interestsort',function(){
 		return [];
 	};
 });
+
+Filters.filter('category',function(){
+	return function(objArray, categoryId ){
+		if( objArray ){
+			return objArray.filter(function( app ){
+				return app.category == categoryId;
+			}).map(function(a){
+				return JSON.parse(JSON.stringify(a));
+			});
+		}
+		return [];
+	};
+});

@@ -1,0 +1,361 @@
+{	
+	"categories" :[
+		{
+			"id": 0,
+			"name": "Music"
+		},{
+			"id": 1,
+			"name": "Finance"
+		},{
+			"id": 2,
+			"name": "Utilities"
+		},{
+			"id": 3,
+			"name": "Education"
+		},{
+			"id": 4,
+			"name": "Entertainment"
+		},{
+			"id": 5,
+			"name": "Food & Drinks"
+		},{
+			"id": 6,
+			"name": "Games"
+		},{
+			"id": 7,
+			"name": "Health & Fitness"
+		},{
+			"id": 8,
+			"name": "Weather"
+		},{
+			"id": 9,
+			"name": "News"
+		},{
+			"id": 10,
+			"name": "Social Networking"
+		}
+	],
+	"apps": [
+		{
+			"id": 0,
+			"name": "Kill the ants",
+			"category": 6,
+			"icon": "ant.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 1,
+			"name": "Farmlife",
+			"category": 6,
+			"icon": "farm.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 2,
+			"name": "Dartz",
+			"category": 6,
+			"icon": "target.jpg",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 3,
+			"name": "Platforms",
+			"category": 6,
+			"icon": "platform.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 4,
+			"name": "Chess",
+			"category": 6,
+			"icon": "chess.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 5,
+			"name": "Fortune",
+			"category": 6,
+			"icon": "dize.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 6,
+			"name": "Your Weight",
+			"category": 7,
+			"icon": "scale.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 7,
+			"name": "Run",
+			"category": 7,
+			"icon": "run.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 8,
+			"name": "Your Diet",
+			"category": 7,
+			"icon": "diet.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 9,
+			"name": "Muscles",
+			"category": 7,
+			"icon": "muscle.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 10,
+			"name": "Fitness",
+			"category": 7,
+			"icon": "fitness.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 11,
+			"name": "Dance to loose weight",
+			"category": 7,
+			"icon": "dance.gif",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 12,
+			"name": "All you need",
+			"category": 7,
+			"icon": "all.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 13,
+			"name": "Routine",
+			"category": 7,
+			"icon": "routine.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 14,
+			"name": "Cool Piano",
+			"category": 0,
+			"icon": "piano.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 15,
+			"name": "My finance",
+			"category": 1,
+			"icon": "finance.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 16,
+			"name": "My Calculator",
+			"category": 2,
+			"icon": "calc.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 17,
+			"name": "My Career",
+			"category": 3,
+			"icon": "career.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 18,
+			"name": "My Movies",
+			"category": 4,
+			"icon": "movie.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 19,
+			"name": "Order Pizza",
+			"category": 5,
+			"icon": "movie.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 20,
+			"name": "Your Country News",
+			"category": 9,
+			"icon": "news.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 21,
+			"name": "Check the weather!",
+			"category": 8,
+			"icon": "weather.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 22,
+			"name": "Call your Friends!",
+			"category": 10,
+			"icon": "calls.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 23,
+			"name": "Cool Guitar",
+			"category": 0,
+			"icon": "guitar.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 24,
+			"name": "Make Money",
+			"category": 1,
+			"icon": "finance.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 25,
+			"name": "My Docs",
+			"category": 2,
+			"icon": "docs.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 26,
+			"name": "Learn another language",
+			"category": 3,
+			"icon": "language.jpg",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 27,
+			"name": "My TV Shows",
+			"category": 4,
+			"icon": "shows.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 28,
+			"name": "Order Food",
+			"category": 5,
+			"icon": "food.jpg",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 29,
+			"name": "Recent News",
+			"category": 9,
+			"icon": "news2.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 30,
+			"name": "Cool Weather",
+			"category": 8,
+			"icon": "weather2.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		},{
+			"id": 31,
+			"name": "Friends!",
+			"category": 10,
+			"icon": "friends.png",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas.",
+			"privacy": {
+				"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
+				"level": 3
+			}
+		}
+	]
+}
