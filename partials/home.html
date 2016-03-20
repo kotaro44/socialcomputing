@@ -10,10 +10,18 @@
 			<br><br>
 			<h1 class="header center light-blue-text darken-1">Instructions</h1>
 			<div class="row center">
-				<h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper, nisl quis eleifend imperdiet, odio ipsum ultrices leo, eget interdum neque ipsum convallis neque. Morbi euismod ac tellus vel finibus. Donec nec sodales nulla. Nullam dolor tortor, euismod eget blandit sed, semper eu neque. Nullam venenatis semper justo. Suspendisse vel metus luctus, viverra eros a, porttitor ante. Curabitur ac posuere nibh. Nulla tempor metus a massa efficitur, quis aliquet eros commodo. Duis gravida, nulla id maximus semper, ante nisl lobortis libero, eu consectetur neque ex egestas elit. Fusce ornare et risus eleifend fringilla. Nulla arcu neque, porta ac odio ut, lacinia ultrices justo. In dictum consectetur ex, molestie posuere orci malesuada vel. In sit amet semper enim.</h5>
+				<h5 ng-if="!surveyType" class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper, nisl quis eleifend imperdiet, odio ipsum ultrices leo, eget interdum neque ipsum convallis neque. Morbi euismod ac tellus vel finibus. Donec nec sodales nulla. Nullam dolor tortor, euismod eget blandit sed, semper eu neque. Nullam venenatis semper justo. Suspendisse vel metus luctus, viverra eros a, porttitor ante. Curabitur ac posuere nibh. Nulla tempor metus a massa efficitur, quis aliquet eros commodo. Duis gravida, nulla id maximus semper, ante nisl lobortis libero, eu consectetur neque ex egestas elit. Fusce ornare et risus eleifend fringilla. Nulla arcu neque, porta ac odio ut, lacinia ultrices justo. In dictum consectetur ex, molestie posuere orci malesuada vel. In sit amet semper enim.</h5>
+				<h5 ng-if="surveyType=='A'" class="header col s12 light">Thank You for participating in our Simulation! please Help us filling a last Survey about the entire Experience.</h5>
+				<h5 ng-if="surveyType=='B'" class="header col s12 light">Questions about privacy preferences in general</h5>
+				<h5 ng-if="surveyType=='C'" class="header col s12 light">Demographics</h5>
+				<h5 ng-if="surveyType=='Z'" class="header col s12 light">Thank You!, your results have saved succesfully!</h5>
 			</div>
 			<div class="row center">
-				<a href="#/app" id="download-button" class="btn-large waves-effect waves-light green darken-1">Get Started</a>
+				<a ng-if="!surveyType" href="#/app" id="download-button" class="btn-large waves-effect waves-light green darken-1">Get Started</a>
+				<a ng-if="surveyType=='A'" href="#/surveyA" id="download-button" class="btn-large waves-effect waves-light green darken-1">Start Survey</a>
+				<a ng-if="surveyType=='B'" href="#/surveyB" id="download-button" class="btn-large waves-effect waves-light green darken-1">Continue</a>
+				<a ng-if="surveyType=='C'" href="#/surveyC" id="download-button" class="btn-large waves-effect waves-light green darken-1">Continue</a>
+				<a ng-if="surveyType=='Z'" href="#/home" id="download-button" class="btn-large waves-effect waves-light green darken-1">Do Another Survey</a>
 			</div>
 			<br><br>
 			<br><br>

@@ -15,8 +15,18 @@ Directives.directive("marketApps", [function () {
         link: function (scope, element, attributes) {
 
         },
-        controller: ['$scope',function($scope){
+        controller: ['$scope','Data',function($scope,Data){
+            $scope.Data = Data;
+            $scope.available = function( app ){
+                var found = Data.Apps.filter(function(a){
+                    return a.id == app.id;
+                });
+                return found.length==0;
+            };
 
+            $scope.haveApps = $scope.apps.filter(function(a){
+                    return a.category==$scope.cid&&$scope.available(a);
+            }).length;
         }]
     }
 }]);

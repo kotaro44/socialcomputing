@@ -1,0 +1,50 @@
+<div class="survey">
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<h4 class="question-number bold">Question {{survey.show+1}} out of {{survey.questions.length}}</h4>
+				<h4 class="question center">{{survey.questions[survey.show].text}}</h4>
+			</div>	
+			<div class="row center">
+				<!--Type 0-->
+				<form id="{{'q'+survey.show}}" 
+					action="#" ng-if="survey.questions[survey.show].type == 0">
+				    <p ng-repeat="answer in survey.questions[survey.show].answers track by $index">
+				    	<input id="{{'a'+$index}}" index="{{$index}}" 
+				    		name="{{'q'+survey.show}}" type="radio"/>
+				    	<label for="{{'a'+$index}}">{{answer}}</label>
+				    </p>
+				</form>
+
+				<!--Type 1-->
+				<form id="{{'q'+survey.show}}" 
+					action="#" ng-if="survey.questions[survey.show].type == 1">
+				    <p ng-repeat="answer in survey.questions[survey.show].answers track by $index">
+				    	<input id="{{'a'+$index}}" index="{{$index}}" 
+				    		name="{{'q'+survey.show}}" type="checkbox"/>
+				    	<label for="{{'a'+$index}}">{{answer}}</label>
+				    </p>
+				</form>
+
+				<!--Type 2-->
+				<div class="row" ng-if="survey.questions[survey.show].type == 2">
+					<form ng-repeat="answer in survey.questions[survey.show].answers track by $index" id="{{'q'+survey.show}}" action="#" >
+						<p>{{answer}}<p/>
+						<p>
+							<span ng-repeat="option in survey.questions[survey.show].options track by $index">
+								<input id="{{'a'+$parent.$index+'-'+$index}}" 
+									index="{{$index}}" pindex="{{$parent.$index}}" 
+									name="{{'q'+survey.show+'-'+$parent.$index}}" type="radio"/>
+				    			<label for="{{'a'+$parent.$index+'-'+$index}}">{{option}}</label>
+							</span>
+						<p/>
+					</form>
+				</div>
+
+				<br>
+				<div class="btn-large waves-effect waves-light green darken-1" 
+					ng-click="survey.submit()">Submit</div>
+			</div>
+		</div>
+	</div>
+</div>

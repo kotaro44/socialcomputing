@@ -1,0 +1,463 @@
+{
+	"types": [{
+		"id": 0,
+		"text": "multiple option"
+	}],
+	"review": [{
+		"text": "How would you rate this app in terms of general likeability?",
+		"type": 0,
+		"answers": [
+			"0 - Not likeable",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very likeable"
+		]
+	}, {
+		"text": "How often would you use this application on a weekly basis?",
+		"type": 0,
+		"answers": [
+			"0 - Never",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Often, at least once a day"
+		]
+	}, {
+		"text": "How would you rate this app in term of ease of use?",
+		"type": 0,
+		"answers": [
+			"0 - Not likeable",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very likeable"
+		]
+	}, {
+		"text": "How comfortable would you feel entering information on this app?",
+		"type": 0,
+		"answers": [
+			"0 - Very uncomfortable",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very Comfortable"
+		]
+	}, {
+		"text": "How would you rate this application in terms of trustworthiness?",
+		"type": 0,
+		"answers": [
+			"0 - Not trustworthy",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very trustworthy"
+		]
+	}, {
+		"text": "How likely are you to recommend using this app to others (friends, family, classmates, co­workers, etc.)?",
+		"type": 0,
+		"answers": [
+			"0 - Would never recommend",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Highly recommend"
+		]
+	}],
+	"surveyA": [{
+		"text": "Please check off all of the mobile devices that you currently use for mobile applications.",
+		"type": 1,
+		"answers": [
+			"iPhone",
+			"iPad",
+			"iPod Touch",
+			"Android",
+			"Nexus One",
+			"Samsung",
+			"I do not currently use a mobile device for mobile applications"
+		]
+	}, {
+		"text": "How many applications do you currently have downloaded on your mobile device?",
+		"type": 0,
+		"answers": [
+			"None",
+			"1-5",
+			"5-10",
+			"10-15",
+			"More than 15"
+		]
+	}, {
+		"text": "How comfortable do you feel using mobile applications in general?",
+		"type": 0,
+		"answers": [
+			"0 - Not Confortable",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very Confortable"
+		]
+	}, {
+		"text": "On average, how many hours per week do you spend using mobile applications on your device?",
+		"type": 0,
+		"answers": [
+			"0",
+			"1-2",
+			"3-5",
+			"6-8",
+			"9-10",
+			"More than 10"
+		]
+	}, {
+		"text": "Please select all applicable categories of applications that you have installed on your device:",
+		"type": 1,
+		"answers": [
+			"Gaming",
+			"Social Networking",
+			"Health/Wellness",
+			"Education",
+			"Enterteinment",
+			"Personal Finance",
+			"News",
+			"E-Commerce"
+		]
+	}, {
+		"text": "Please rank the following types of applications based on your current usage, from most frequently used to least frequently used. (1= Most frequently used , 8=least frequently used, N/A=Not applicable)",
+		"type": 2,
+		"options": ["1", "2", "3", "4", "5", "6", "7", "8", "N/A"],
+		"answers": [
+			"Gaming",
+			"Social Networking",
+			"Health/Wellness",
+			"Education",
+			"Enterteinment",
+			"Personal Finance",
+			"News",
+			"E-Commerce"
+		]
+	}, {
+		"text": "Please rank the following types of applications based on the amount of personal information required for use (1= Most personal information required, 8 =least personal information required, N/A=not applicable)",
+		"type": 2,
+		"options": ["1", "2", "3", "4", "5", "6", "7", "8", "N/A"],
+		"answers": [
+			"Gaming",
+			"Social Networking",
+			"Health/Wellness",
+			"Education",
+			"Enterteinment",
+			"Personal Finance",
+			"News",
+			"E-Commerce"
+		]
+	}, {
+		"text": "For the apps currently installed on your device that require creation of a user account, please indicate how many applications had an option to create a user profile for you through information sourced from another application or website (e.g. Facebook or Google+ API).",
+		"type": 0,
+		"answers": [
+			"0",
+			"1-2",
+			"3-5",
+			"6-8",
+			"9-10",
+			"More than 10"
+		]
+	}, {
+		"text": "Of the applications that you use the most frequently on your device, please indicate the state that best represents how you create user profiles on those applications",
+		"type": 0,
+		"answers": [
+			"I create user accounts through the use of a social networking API on my most frequently used applications.",
+			"I create user accounts through manual entry on my most frequently used applications.",
+			"I am not sure how frequently I create a user account through manual entry compared to the use of a social networking API for my most frequently used applications.",
+			"I do not use any applications that require creating a user account.",
+			"I do not use any mobile applications."
+		]
+	}, {
+		"text": "Please rank the following methods of user profile creation on mobile applications based on your comfort level (1= Not comfortable at all, 4=very comfortable, N/A=Not applicable)",
+		"type": 2,
+		"options": ["1", "2", "3", "4", "N/A"],
+		"answers": [
+			"Creating a user profile with only manual entry",
+			"Creating a user profile with a combination of manual entry for some types of personal information, and the use of a social networking API for other types of information",
+			"Creating a user profile with the option of either only manual entry or the use of a social networking API, but not both",
+			"Creating a user profile with only the use of a social networking API"
+		]
+	}, {
+		"text": "Please rank the following methods of interactions with other users on mobile interactions based on your comfort level (1= Not comfortable at all, 5=very comfortable, N/A=Not applicable)",
+		"type": 2,
+		"options": ["1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"Other users can view all of my user profile information",
+			"Other users can view all of my user profile information and other networks I may have used to transfer information (e.g social networking API) for my user profile creation",
+			"Other users can view only some parts of my user profile based on who I select to view my profile, but all users can view any other networks I may have used to transfer information",
+			"Other users can view only some parts of my user profile based on who I select to view my profile, and cannot view any other networks I may have used to transfer information I may have used to transfer information (e.g social networking API) for my user profile creation",
+			"Other users cannot view any parts of my user profile in any circumstances, and cannot view any other networks that I am a part of outside of the application"
+		]
+	}, {
+		"text": "Do you currently use a smartphone device at least once a day? Please select one.",
+		"type": 0,
+		"answers": [
+			"Yes",
+			"No"
+		]
+	}, {
+		"text": "How many hours do you use the Internet a day?",
+		"type": 0,
+		"answers": [
+			"I don't use Internet",
+			"1-2",
+			"2-4 Hours",
+			"4-6 Hours",
+			"6-8 Hours",
+			"More than 8 Hours"
+		]
+	}, {
+		"text": "What device do you use most to access the Internet (for any activity, including online shopping, social media, email, browsing, etc)?",
+		"type": 0,
+		"answers": [
+			"Smartphone",
+			"Tablet",
+			"Laptop",
+			"Desktop"
+		]
+	}],
+	"surveyB": [{
+		"text": "How secure do you feel when using mobile applications currently installed on your phone?",
+		"type": 0,
+		"answers": [
+			"0 - Not Confortable",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Very Confortable"
+		]
+	}, {
+		"text": "Some websites and applications may require you to provide personal information through registration before continuing use. Please indicate how often you enter false information when asked to register for a website or mobile application.",
+		"type": 0,
+		"answers": [
+			"Decline to answer",
+			"0% of the time",
+			"Less than 10% of the time",
+			"10­25% of the time",
+			"26­50% of the time",
+			"51­75% of the time",
+			"76 ­ 90% of the time",
+			"More than 90% of the time",
+			"100% of the time; I alway provide false information when asked to register.",
+			"I have never registered with a website or mobile application."
+		]
+	}, {
+		"text": "If a website or mobile application records your activity without your knowledge, how does discovery of the monitoring make you feel?",
+		"type": 0,
+		"answers": [
+			"More secure",
+			"Less secure",
+			"No difference in feelings of security"
+		]
+	}, {
+		"text": "If a website or mobile application records your activity after you have given your consent to be recorded, how does knowledge of the monitoring make you feel?",
+		"type": 0,
+		"answers": [
+			"More secure",
+			"Less secure",
+			"No difference in feelings of security"
+		]
+	}, {
+		"text": "Please rate the following reasons for not providing information in a mobile application (0= Not important, 5=Very important, N/A=Not applicable)",
+		"type": 2,
+		"options": ["0", "1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"I am worried about my information getting stolen",
+			"I don't know how my information will be used in the mobile application",
+			"I don't know who else is looking at my information",
+			"I don't trust the website/application to keep my information from other people/parties",
+			"I'm unfamiliar with how the technology of the application",
+			"My information has been leaked in the past",
+			"I know of someone whose information has been exposed through a mobile application"
+		]
+	}, {
+		"text": "Please rate the importance of your consent in the following online activity scenarios (0= Not important, 5=Very important, N/A=Not applicable)",
+		"type": 2,
+		"options": ["0", "1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"Making a purchase or transferring money through an application",
+			"Having your personal information share with others outside of an application",
+			"Having your your activity within an application monitored",
+			"Having in­depth personal information gathered by an application from external databases",
+			"Customization of your user experience in an application through gathering of in­depth personal information that you manually enter"
+		]
+	}, {
+		"text": "Please rate your willingness to disclose each of the following types of information on a mobile application after receiving confirmation that your information would not be shared with other application users or external parties (0= Not willing, 5=Very willing, N/A=Not applicable)",
+		"type": 2,
+		"options": ["0", "1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"Full Name",
+			"Email Address",
+			"Home Address",
+			"Phone Number",
+			"Age",
+			"Marital status/ family information",
+			"Current location",
+			"Purchasing history",
+			"Job/academic history",
+			"Personal failures",
+			"Interpersonal/relationship conflicts",
+			"Feelings of stress, anxiety, or depression",
+			"Medical history",
+			"Legal/criminal transgressions",
+			"Academic/work achievements"
+		]
+	}, {
+		"text": "Please rate your willingness to disclose each of the following types of information on a mobile application without receiving confirmation that your information would not be shared with other application users or external parties (0= Not willing, 5=Very willing, N/A=Not applicable)",
+		"type": 2,
+		"options": ["0", "1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"Full Name",
+			"Email Address",
+			"Home Address",
+			"Phone Number",
+			"Age",
+			"Marital status/ family information",
+			"Current location",
+			"Purchasing history",
+			"Job/academic history",
+			"Personal failures",
+			"Interpersonal/relationship conflicts",
+			"Feelings of stress, anxiety, or depression",
+			"Medical history",
+			"Legal/criminal transgressions",
+			"Academic/work achievements"
+		]
+	}, {
+		"text": "Please rate your willingness to disclose each of the following types of information on a mobile application if you were given the option of choosing who could access your information. In this scenario, you would be able to disclose any of the following types of information to some, all, or none of the users of an application or external parties (0= Not willing, 5=Very willing, N/A=Not applicable)",
+		"type": 2,
+		"options": ["0", "1", "2", "3", "4", "5", "N/A"],
+		"answers": [
+			"Full Name",
+			"Email Address",
+			"Home Address",
+			"Phone Number",
+			"Age",
+			"Marital status/ family information",
+			"Current location",
+			"Purchasing history",
+			"Job/academic history",
+			"Personal failures",
+			"Interpersonal/relationship conflicts",
+			"Feelings of stress, anxiety, or depression",
+			"Medical history",
+			"Legal/criminal transgressions",
+			"Academic/work achievements"
+		]
+	}, {
+		"text": "Do you use any of the following?",
+		"type": 1,
+		"answers": [
+			"AdBlocker",
+			"Private Browsing",
+			"Ghostery",
+			"I do not know what these are or do not use them"
+		]
+	}, {
+		"text": "Are you concerned about being tracked online?",
+		"type": 0,
+		"answers": [
+			"Very concerned",
+			"Somewhat concerned",
+			"Somewhat unconcerned",
+			"Unconcerned"
+		]
+	}, {
+		"text": "I do not give much thought to if third parties, developers and advertisers on sites and apps that I use have access to my data.",
+		"type": 0,
+		"answers": [
+			"0 - Strongly Disagree",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5 - Strongly Agree"
+		]
+	}, {
+		"text": "Do you ever enter inaccurate information into sites and apps to keep your information private (e.g. fake age, birth year, etc)?",
+		"type": 0,
+		"answers": [
+			"Yes, often",
+			"Yes, sometimes",
+			"Yes, rarely",
+			"No, I do not do this"
+		]
+	}],
+	"surveyC": [{
+		"text": "Your Age is Around?",
+		"type": 0,
+		"answers": [
+			"Less than 18",
+			"18 - 22",
+			"22 - 30",
+			"More than 30"
+		]
+	}, {
+		"text": "What gender do you identify with? Please select one.",
+		"type": 0,
+		"answers": [
+			"Male",
+			"Female",
+			"Another Gender",
+			"Prefer not to Say"
+		]
+	}, {
+		"text": "Are you an American or international student?",
+		"type": 0,
+		"answers": [
+			"American",
+			"International",
+			"Other"
+		]
+	}, {
+		"text": "Which is your current student level?",
+		"type": 0,
+		"answers": [
+			"Undergraduate - Freshman",
+			"Undergraduate - Sophomore",
+			"Undergraduate - Junior",
+			"Undergraduate - Senior",
+			"Undergraduate - Fifth year student or later",
+			"Graduate"
+		]
+	}, {
+		"text": "please select the category of your major/program of study from the options below.",
+		"type": 0,
+		"answers": [
+			"Humanities/Liberal Arts",
+			"Natural/Physical Sciences/Mathematics",
+			"Social Sciences",
+			"Business/Hotel Administration",
+			"Fine Arts/Music",
+			"Architecture/Planning",
+			"Economics/Policy Administration",
+			"Health/Medical Sciences",
+			"Engineering",
+			"Environmental Sciences",
+			"Foreign Languages",
+			"Cultural Studies",
+			"Computer Science, Technology, and Information Systems"
+		]
+	}, {
+		"text": "What race or ethnicity do you identify with? (select all that apply)",
+		"type": 1,
+		"answers": [
+			"Asian",
+			"African American or Black",
+			"Hispanic or Latino",
+			"Caucasian or white",
+			"Native American, Alaskan, Hawaiian, Pacific Islander",
+			"A race or ethnicity not listed"
+		]
+	}]
+}

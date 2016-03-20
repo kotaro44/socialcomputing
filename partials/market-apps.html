@@ -1,11 +1,11 @@
-<div class="row market-apps" ng-if="apps.length">
+<div class="row market-apps" ng-if="haveApps">
 	<h3>{{name}}</h3>
 	<div class="apps-wrapper" smooth-scroll
     duration="800"
     easing="easeInQuint"
     offset="120">
 		<ul>
-			<li ng-repeat="app in apps" ng-if="app.category==cid">
+			<li ng-repeat="app in apps" ng-if="app.category==cid&&available(app)">
 				<app-preview  app="app"></app-preview>
 				</div>
 			</li>
