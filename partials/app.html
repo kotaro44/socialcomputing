@@ -1,67 +1,115 @@
 <div class="app.wrapper">
-	<nav class="light-blue darken-4 app-header" role="navigation">
-		<div class="nav-wrapper container">
-			<a id="logo-container" href="#" class="brand-logo">Logo</a>
-		</div>
-	</nav>
-	<div ng-if="!app" 
+	<div 
 		class="section no-pad-bot app-content" id="app-content"
 		 smooth-scroll>
-		<div class="container">
-			<div class="row" ng-repeat="category in Apps.categories">
-				<market-apps name="category.name" cid="category.id"
-					apps="Apps.apps">
-				</market-apps>
-			</div>
-		</div>
-	</div>
-	<div ng-if="app" 
-		class="section no-pad-bot app-content" id="app-content"
-		 smooth-scroll>
-		<div class="container">
-			<div class="row">
-				<a class="waves-effect light-blue lighten-2 btn" href="#/app">
-					back
-				</a>
-			</div>
-			<div class="row">
-				<div class="app-icon-big" 
-					style="background-image: url(img/icons/{{app.icon}})"></div>
-				<div class="app-header-big">
-					<h3 class="app-title">{{app.name}}</h3>
-					<div>
-						<div>Privacy Critics Rating</div>
+		 <div class="container">App #{{appId+1}} out of {{appsToDownload}} apps</div>
+		<div class="phone"></div>
+		<div class="container screen">
+			<!--APP DETAIL-->
+
+				<div class="row">
+					<div class="app-icon-big" 
+						style="background-image: url(img/icons/{{app.icon}})"></div>
+					<div class="app-header-big">
+						<h5 class="app-title">{{app.name}}</h5>
+						<div ng-if="studyType==2||studyType==3">
+							<div>Privacy Critics Rating</div>
+							<div class="app-desc">
+								<span ng-class="{'privacy-rate-no': (i>=app.privacy.level) }" 
+									class="privacy-rate" ng-repeat="i in [0,1,2,3,4]">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col s12">
+						<ul class="tabs">
+							<li class="tab col s3">
+								<a class="active" href="#tab1">Description</a>
+							</li>
+							<li class="tab col s3">
+								<a class="active" href="#tab2">Review</a>
+							</li>
+							<li class="tab col s3" ng-if="studyType==4||studyType==3">
+								<a href="#tab3">Privacy</a>
+							</li>
+						</ul>
+					</div>
+					<div id="tab1" class="col s12">
+						<h4>App Description</h4>
+						{{app.description}}
+					</div>
+					<div id="tab2" class="col s12">
+						<h4>App Review</h4>
 						<div class="app-desc">
 							<span ng-class="{'privacy-rate-no': (i>=app.privacy.level) }" 
 								class="privacy-rate" ng-repeat="i in [0,1,2,3,4]">
-
 							</span>
 						</div>
 					</div>
-
+					<div id="tab3" class="col s12" ng-if="studyType==4||studyType==3">
+						<h4>Privacy Policy</h4>
+						{{app.privacy.policy}}
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<h4>Privacy Policy</h4>
-				{{app.privacy.policy}}
-			</div>
-			<div class="row">
-				<h4>App Description</h4>
-				{{app.description}}
-			</div>
-			<div class="row center">
-				<a class="waves-effect waves-light btn" ng-click="download()">
-					Download App
-				</a>
-				<a class="waves-effect red lighten-2 btn" ng-click="reject()">
-					I don't Trust this App
-				</a>
+
+
+			<!--END APP DETAIL-->
+		</div>
+	</div>
+	<div class="section no-pad-bot app-survey">
+		<div class="survey">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<h4 class="question-number bold">Question {{survey.show+1}} out of {{survey.questions.length}}</h4>
+						<h4 class="question center">{{survey.questions[survey.show].text}}</h4>
+					</div>	
+					<div class="row center">
+						<!--Type 0-->
+						<form id="{{'q'+survey.show}}" 
+							action="#" ng-if="survey.questions[survey.show].type == 0">
+						    <p ng-repeat="answer in survey.questions[survey.show].answers track by $index">
+						    	<input id="{{'a'+$index}}" index="{{$index}}" 
+						    		name="{{'q'+survey.show}}" type="radio"/>
+						    	<label for="{{'a'+$index}}">{{answer}}</label>
+						    </p>
+						</form>
+
+						<!--Type 1-->
+						<form id="{{'q'+survey.show}}" 
+							action="#" ng-if="survey.questions[survey.show].type == 1">
+						    <p ng-repeat="answer in survey.questions[survey.show].answers track by $index">
+						    	<input id="{{'a'+$index}}" index="{{$index}}" 
+						    		name="{{'q'+survey.show}}" type="checkbox"/>
+						    	<label for="{{'a'+$index}}">{{answer}}</label>
+						    </p>
+						</form>
+
+						<!--Type 2-->
+						<div class="row" ng-if="survey.questions[survey.show].type == 2">
+							<form ng-repeat="answer in survey.questions[survey.show].answers track by $index" id="{{'q'+survey.show}}" action="#" >
+								<p>{{answer}}<p/>
+								<p>
+									<span ng-repeat="option in survey.questions[survey.show].options track by $index">
+										<input id="{{'a'+$parent.$index+'-'+$index}}" 
+											index="{{$index}}" pindex="{{$parent.$index}}" 
+											name="{{'q'+survey.show+'-'+$parent.$index}}" type="radio"/>
+						    			<label for="{{'a'+$parent.$index+'-'+$index}}">{{option}}</label>
+									</span>
+								<p/>
+							</form>
+						</div>
+
+						<br>
+						<div class="btn-large waves-effect waves-light green darken-1" 
+							ng-click="survey.submit()">Submit</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<footer class="page-footer app-footer green darken-4">
-		<div class="container">
-		Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-		</div>
-	</footer>
 </div>

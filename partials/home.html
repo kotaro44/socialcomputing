@@ -1,5 +1,5 @@
 <div class="home">
-	<nav class="light-blue darken-4" role="navigation">
+	<nav class="light-blue darken-4" role="navigation" ng-if="!surveyType">
 		<div class="nav-wrapper container">
 			<a id="logo-container" href="#" class="brand-logo">Logo</a>
 		</div>
@@ -8,16 +8,100 @@
 		<div class="container">
 			<br><br>
 			<br><br>
-			<h1 class="header center light-blue-text darken-1">Instructions</h1>
+			<h1 ng-if="!surveyType" class="header center light-blue-text darken-1">Instructions</h1>
+			<h1 ng-if="surveyType=='A'" class="header center light-blue-text darken-1">Survey Part A</h1>
+			<h1 ng-if="surveyType=='B'" class="header center light-blue-text darken-1">Survey Part B</h1>
+			<h1 ng-if="surveyType=='C'" class="header center light-blue-text darken-1">Demographics Questions</h1>
+			<h1 ng-if="surveyType=='D'" class="header center light-blue-text darken-1">Thank You!</h1>
 			<div class="row center">
-				<h5 ng-if="!surveyType" class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper, nisl quis eleifend imperdiet, odio ipsum ultrices leo, eget interdum neque ipsum convallis neque. Morbi euismod ac tellus vel finibus. Donec nec sodales nulla. Nullam dolor tortor, euismod eget blandit sed, semper eu neque. Nullam venenatis semper justo. Suspendisse vel metus luctus, viverra eros a, porttitor ante. Curabitur ac posuere nibh. Nulla tempor metus a massa efficitur, quis aliquet eros commodo. Duis gravida, nulla id maximus semper, ante nisl lobortis libero, eu consectetur neque ex egestas elit. Fusce ornare et risus eleifend fringilla. Nulla arcu neque, porta ac odio ut, lacinia ultrices justo. In dictum consectetur ex, molestie posuere orci malesuada vel. In sit amet semper enim.</h5>
+				<!--INSTRUCTIONS SCREEN-->
+					<h5 ng-if="!surveyType" class="header col s12 light left-align">
+					You will be asked to participate in a study. We are asking you to take part because you responded to our
+					flyer notices posted on campus, or our SONA email.
+					<br><br>
+					<b>What we will ask you to do</b><br>
+					You will be shown approximately 10-15
+					different mobile app description/ratings pages for social, game,
+					and health apps. After each one, you will be asked to rate the app on several measures such as how much
+					you might be interested in using it or recommending it to a friend. We will then ask you some questions
+					about your internet and mobile phone use. Afterwards, you will be asked to fill out some general
+					demographic questions.
+					<br><br>
+					<b>Purpose of this Study</b><br>
+					We’re interested in learning what types of mobile applications (health, gaming, social) college students
+					use, like, and are likely to recommend to friends.
+					<br><br>
+					<b>Expected Duration</b><br>
+					The expected total duration of the study is 30 minutes, and can be taken online or in 494 Mann (Sue
+					Fussell’s Intercultural Communication Lab at Mann Library’s Department of Communication).
+					<br><br>
+					<b>Participant Requirements</b><br>
+					Participants must be at least 18 years old to participate. They must also own and regularly use a
+					smartphone.
+					<br><br>
+					<b>Risks</b><br>
+					The risks and discomfort associated with participation in this study are no greater than those ordinarily
+					encountered in daily life or during the performance of routine physical or psychological examinations or
+					tests.
+					<br><br>
+					<b>Rights</b><br>
+					Your participation is voluntary. You are free to stop your participation at any point. Refusal to
+					participate or withdrawal of your consent or discontinued participation in the study will not result in any
+					penalty. The Principal Investigator may at his/her discretion remove you from the study for any of a
+					number of reasons. In such an event, you will not suffer any penalty. It will not affect your current or
+					future relationship with Cornell University.
+					<br><br>
+					<b>Benefits</b><br>
+					There may be no personal benefit from your participation in the study but the research will contribute to a
+					better understanding of college students’ use and perceptions of different types of mobile applications.
+					<br><br>
+					<b>Compensation & Costs</b><br>
+					You will receive 0.5 SONA credits for completing this study. There will be no cost to you if you
+					participate in this study. Compensation is based on study completion and while you are free to withdraw
+					at any time, credit cannot be given for withdrawals.
+					<br><br>
+					<b>Confidentiality</b><br>
+					Your consent form and data will be confidential. Your identity will be kept confidential throughout the
+					study. Any data collected in the study will only be accessible to the researchers involved. When
+					publishing the results, we will not include any information that will make it possible to identify you.
+					<br><br>
+					Because the recruitment of participants is facilitated by using email and Internet, the message
+					communicated via Internet could be read by a third party due to the nature of Internet technologies.
+					However, the researchers will not intentionally disclose any communication contents to any third parties.
+					<br><br>
+					<b>Right to Ask Questions & Contact Information</b><br>
+					The researchers conducting this study are Shruti Sannon, a PhD student in Communication at Cornell
+					University and Christine Geeng and Shayra Kamal, undergraduate students in Information Science. If you
+					have any questions, you may contact Shruti Sannon at ss3464@cornell.edu, Christine Geeng at
+					cg447@cornell.edu, and/or Shayra Kamal at <a href="mailto:sk2328@cornell.edu">sk2328@cornell.edu<a/>.<br><br>
+					You can reach the overseeing faculty member, Prof. Susan Fussell, at <a href="sfussell@cornell.edu">sfussell@cornell.edu<a/>. If you have
+					any questions or concerns regarding your rights as a subject in this study, you may contact the
+					Institutional Review Board (IRB) at <b>607-255-5138</b>
+					or access their website at <a href="http://www.irb.cornell.edu">http://www.irb.cornell.edu<a/>.
+					You may also report your concerns or complaints anonymously through Ethicspoint
+					(<a href="http://www.hotline.cornell.edu">http://www.hotline.cornell.edu<a/>.) or by calling toll free at <b>1-866-293-3077</b>.
+					Ethics point is an independent
+					organization that serves as a liaison between the University and the person bringing the complaint so that
+					anonymity can be ensured.</h5>
+				<!--END-->
 				<h5 ng-if="surveyType=='A'" class="header col s12 light">Thank You for participating in our Simulation! please Help us filling a last Survey about the entire Experience.</h5>
 				<h5 ng-if="surveyType=='B'" class="header col s12 light">Questions about privacy preferences in general</h5>
-				<h5 ng-if="surveyType=='C'" class="header col s12 light">Demographics</h5>
-				<h5 ng-if="surveyType=='Z'" class="header col s12 light">Thank You!, your results have saved succesfully!</h5>
+				<h5 ng-if="surveyType=='C'" class="header col s12 light">Please fill up the Demographics part</h5>
+				<h5 ng-if="surveyType=='Z'" class="header col s12 light">Your results have saved succesfully!</h5>
 			</div>
 			<div class="row center">
-				<a ng-if="!surveyType" href="#/app" id="download-button" class="btn-large waves-effect waves-light green darken-1">Get Started</a>
+				<div ng-if="!surveyType" class="">
+					<p>
+						<div class="input-field col s12">
+							<input id="your_name" type="text" ng-model="inputs.name">
+							<label for="your_name">Your Name</label>
+						</div>
+				    	<input type="checkbox" id="policy" ng-model="inputs.privacy_policy"/>
+				    	<label for="policy">I have read the above information, and have received answers to any questions I asked. I consent to take
+part in the study.</label>
+				    </p>
+					<a  ng-click="start()" id="download-button" ng-class="{disabled: !inputs.privacy_policy||!inputs.name}" class="btn-large waves-effect waves-light green darken-1">Get Started</a>
+				</div>
 				<a ng-if="surveyType=='A'" href="#/surveyA" id="download-button" class="btn-large waves-effect waves-light green darken-1">Start Survey</a>
 				<a ng-if="surveyType=='B'" href="#/surveyB" id="download-button" class="btn-large waves-effect waves-light green darken-1">Continue</a>
 				<a ng-if="surveyType=='C'" href="#/surveyC" id="download-button" class="btn-large waves-effect waves-light green darken-1">Continue</a>
@@ -28,7 +112,7 @@
 		</div>
 	</div>
 
-	<footer class="page-footer green darken-3">
+	<footer class="page-footer green darken-3" ng-if="!surveyType">
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12">

@@ -28,9 +28,6 @@ app.config(['$routeProvider',function($routeProvider) {
 	}).when('/end', {
 		templateUrl: 'partials/home.html',
 		controller: 'endCtrl'
-	}).when('/review', {
-		templateUrl: 'partials/survey.html',
-		controller: 'reviewCtrl'
 	}).when('/surveyA', {
 		templateUrl: 'partials/survey.html',
 		controller: 'surveyCtrl'

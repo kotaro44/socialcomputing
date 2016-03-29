@@ -3,76 +3,89 @@
 /* Controllers */
 var Controllers = angular.module('socialcomputing.controllers', []);
 
-Controllers.controller('homeCtrl', ['$scope','$http',function($scope,$http) {
+window.appNumber = 15;
 
+Controllers.controller('homeCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
+	$scope.inputs = {
+		privacy_policy: false,
+		name: ""
+	};
+
+	if( Data.participant.name )
+		window.location = '#/app';
+
+	$scope.start = function(){
+		Data.participant.name = $scope.inputs.name;
+		Data.type = Math.ceil(Math.random()*4);
+		window.location = '#/app?id=0'
+	};
 }]);
 
 Controllers.controller('endCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
 	$scope.surveyType = 'Z';
-	//sent and delete Data
-	Data.Apps = [];
-	Data.survey = [];
-	Data.surveyA = [];
-	Data.surveyB = [];
-	Data.surveyC = [];
-}]);
 
-Controllers.controller('surveyHomeCtrl', ['$scope','$http',function($scope,$http) {
-	$scope.surveyType = window.location.href.split('#')[1].split(/(survey)|(home)/)[3];
-}]);
-
-Controllers.controller('reviewCtrl', ['$scope','$http','Survey','Data',
-	function($scope,$http,Survey,Data) {
-	$scope.appId = window.location.href.split('?')[1];
-	if( !$scope.appId )
-		window.location = "#/app";
-	$scope.appId = parseInt($scope.appId.split('=')[1]);
-
-	$scope.app = Data.Apps.filter(function(a){
-		return a.id == $scope.appId;
-	})[0];
-
-	if( !$scope.app )
-		window.location = "#/app";
-
-	$scope.survey = {
-		questions: null,
-		show: 0,
-		submit: function(){
-			var ans = $("input[name=q" + $scope.survey.show + "]:checked").attr('index');
-			if( !ans ){
-				Materialize.toast("Please select an answer",4000);
-			}else{
-				$scope.newSurvey.answers.push( ans );
-				$scope.survey.show++;
-				$("input:checked").attr('checked',null);
-				if( $scope.survey.show >= $scope.survey.questions.length ){
-					$scope.app.review = $scope.newSurvey.answers;
-					window.location = "#/app";
-				}
-			}
-		}
-	};
-	$scope.newSurvey = {
-		"answers": []
-	};
-
-	$scope.check = function(){
-		if( Survey.loading ){
-			setTimeout($scope.check ,50);
-		}else{
-			$scope.survey.questions = Survey.review;
-			$scope.$digest();
-		}
+	if( !Data.surveyA.length || !Data.surveyB.length || !Data.surveyC.length || 
+		!Data.participant.name || Data.apps.length!=window.appNumber ){
+		window.location = '#/surveyBhome';
+	}else{
+		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
+		Data.participant = {
+			name: ""
+		};
+		Data.type = 0;
+		Data.apps = [];
+		Data.surveyA = [];
+		Data.surveyB = [];
+		Data.surveyC = [];
 	}
-	setTimeout($scope.check ,50);
+}]);
+
+Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
+	$scope.surveyType = window.location.href.split('#')[1].split(/(survey)|(home)/)[3];
+	switch($scope.surveyType){
+		case 'A': 
+				if( Data.apps.length != window.appNumber )
+					window.location = '#/app';
+				else if( Data.surveyA.length )
+					window.location = '#/surveyBhome';
+			break;
+		case 'B': 
+				if( !Data.surveyA.length )
+					window.location = '#/surveyAhome';
+				else if( Data.surveyB.length )
+					window.location = '#/surveyChome';
+			break;
+		case 'C': 
+				if( !Data.surveyB.length )
+					window.location = '#/surveyBhome';
+			break;
+		default: 
+			break;
+	}
 }]);
 
 Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function($scope,$http,Survey,Data) {
-	/*if( Data.Apps.length != 5 )
-		window.location = '#/app';*/
-
 	$scope.surveyType = window.location.href.split('#')[1].split('survey')[1];
+	switch($scope.surveyType){
+		case 'A': 
+				if( Data.apps.length != window.appNumber )
+					window.location = '#/app';
+				else if( Data.surveyA.length )
+					window.location = '#/surveyBhome';
+			break;
+		case 'B': 
+				if( !Data.surveyA.length )
+					window.location = '#/surveyAhome';
+				else if( Data.surveyB.length )
+					window.location = '#/surveyChome';
+			break;
+		case 'C': 
+				if( !Data.surveyB.length )
+					window.location = '#/surveyBhome';
+			break;
+		default: 
+			break;
+	}
 
 	$scope.survey = {
 		questions: null,
@@ -148,53 +161,81 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function(
 	setTimeout($scope.check ,50);
 }]);
 
-Controllers.controller('appCtrl', ['$scope','$http','Apps','Data',function($scope,$http,Apps,Data) {
+Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey',function($scope,$http,Apps,Data,Survey) {
+	$scope.studyType = Data.type;
 	$scope.Apps = Apps;
+	$scope.appsToDownload = window.appNumber;
 	$scope.appId = window.location.href.split('?')[1];
-	$scope.appsToDownload = 5;
-
-	$scope.download = function(){
-		$scope.newApp.downloaded = true;
-		var toastText = 'Thank you!, we Will Notify you once your app is ready!';
-		Materialize.toast($('<span><br>' + toastText + '<br><br></span>'), 4000);
-		Data.Apps.push($scope.newApp);
-		window.location = "#/review?id="+$scope.newApp.id;
-	};
-
-	$scope.reject = function(){
-		var toastText = 'Thank you for reporting this app!';
-		Materialize.toast($('<span><br>' + toastText + '<br><br></span>'), 4000);
-		Data.Apps.push($scope.newApp);
-		window.location = "#/review?id="+$scope.newApp.id;
-	};
-
-	$scope.check = function(){
-		if( Apps.loading ){
-			setTimeout($scope.check ,50);
-		}else{
-			if( $scope.appId ){
-				$scope.appId = parseInt($scope.appId.split('=')[1]);
-				$scope.app = $scope.Apps.apps.filter(function( app ){
-					return app.id == $scope.appId;
-				})[0];
-				if( !$scope.app ){
-					window.location = '#/';
-				}
-				$scope.$digest();
-				$scope.newApp = {
-					"id": $scope.app.id,
-					"downloaded": false
-				}
+	
+	$scope.survey = {
+		questions: null,
+		show: 0,
+		submit: function(){
+			var ans = $("input[name=q" + $scope.survey.show + "]:checked").attr('index');
+			if( !ans ){
+				Materialize.toast("Please select an answer",4000);
 			}else{
-				var val = ($scope.appsToDownload-Data.Apps.length);
-				if( val <= 0 ){
-					window.location = '#/surveyAhome';
-				}else{
-					Materialize.toast('Please select an App (' + 
-						val + ' app' + (val==1?'':'s') + ' remaining)' , 4000);
+				$scope.newSurvey.answers.push( ans );
+				$scope.survey.show++;
+				$("input:checked").attr('checked',null);
+				if( $scope.survey.show >= $scope.survey.questions.length ){
+					$scope.app.review = $scope.newSurvey.answers;
+					Data.apps.push($scope.app.review);
+
+					$scope.appId++;
+					if( parseInt($scope.appId) >= $scope.appsToDownload){
+						window.location = "#/surveyAhome";
+					}else{
+						window.location = "#/app?id=" + $scope.appId;
+					}
 				}
 			}
 		}
+	};
+
+	$scope.check = function(){
+		if( Apps.loading || Survey.loading ){
+			setTimeout($scope.check ,50);
+		}else{
+			
+
+			if( parseInt($scope.appId) != Data.apps.length )
+				window.location = '#/app?id=' + Data.apps.length;
+
+			$scope.survey.questions = Survey.review;
+			$scope.app = $scope.Apps.apps.filter(function( app ){
+				return app.id == $scope.appId;
+			})[0];
+
+			if( !$scope.app ){
+				window.location = '#/';
+			}
+			$scope.newApp = {
+				"id": $scope.app.id,
+				"downloaded": false
+			}
+			$scope.newSurvey = {
+				"answers": []
+			};
+
+			$scope.$digest();
+			setTimeout(function(){
+				 $('ul.tabs').tabs();
+			},50)
+		}
+	};
+
+	if( !$scope.appId ) 
+		window.location = '#/app?id=' + Data.apps.length;
+	else {
+		$scope.appId = parseInt($scope.appId.split('=')[1]);
+		if( parseInt($scope.appId) >= $scope.appsToDownload)
+			window.location = "#/surveyAhome";
+
+		if( !Data.participant.name ){
+			window.location = '#/home';
+		}else{
+			setTimeout($scope.check ,50);
+		}
 	}
-	setTimeout($scope.check ,50);
 }]);

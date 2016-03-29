@@ -6,6 +6,7 @@ html , html body {
 	height: 100%;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
+	word-break: keep-all!important;
 }
 
 body {
@@ -46,29 +47,42 @@ body {
 	background-position: center center;
 	background-size: 90% auto;
 	background-color: #FFFFFF;
-	box-shadow: 5px 5px 10px #AAAAAA;
 	width: 100px;
 	height: 100px;
 	border-radius: 20px;
+	border: 2px solid #EEEEEE;
 	margin-bottom: 5px;
 }
 
 .app-icon-big {
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	display: inline-block;
+}
+
+.tabs .tab a {
+	font-size: 0.7em;
 }
 
 .app-header-big {
 	vertical-align: top;
 	display: inline-block;
-	margin-left: 25px;
+	width: 160px;
 }
 .app-header-big .app-title {
 
 }
+
+.app-header-big .app-title div {
+	font-size: 1em;
+}
+
 .app-header-big .app-desc {
 	
+}
+
+.tabs {
+	overflow: hidden!important;
 }
 
 .btn {
@@ -76,8 +90,8 @@ body {
 }
 
 .privacy-rate {
-	width: 30px;
-	height: 30px;
+	width: 15px;
+	height: 15px;
 	display: inline-block;
     margin-left: 5px;
     background-image: url(../../img/critic.png);
@@ -124,9 +138,42 @@ body .privacy-rate-no {
 	top: 45px;
 	bottom: 48px;
 	left: 0;
-	width: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	right: 50%;
+	overflow: auto;
+}
+
+.app-survey {
+	position: absolute;
+	z-index: 1;
+	top: 45px;
+	bottom: 48px;
+	left: 50%;
+	right: 0%;
+	overflow: auto;
+}
+
+.app-content .phone {
+	position: absolute;
+	left: 50%;
+	background-image: url(../../img/iphone.png);
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-left: -200px;
+	width: 400px;
+	height: 750px;
+}
+
+.app-content .screen {
+	padding: 15px;
+	left: 50%;
+	margin-left: -143px;
+	top: 131px;;
+	width: 292px;
+	height: 544px;
+	position: absolute;
+	background-color: white;
+	overflow: auto;
 }
 
 html,

@@ -37,9 +37,14 @@ Services.service("Survey",function($http){
 
 Services.service('Data',function($http){
 	var Data = {
-		"Apps": [],
-		"Survey": []
+		"participant": {
+			"name": ""
+		},
+		"type": 0,
+		"apps": [],
+		"surveyA": [],
+		"surveyB": [],
+		"surveyC": []
 	};
-
 	return Data;
 });

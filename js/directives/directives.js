@@ -18,7 +18,7 @@ Directives.directive("marketApps", [function () {
         controller: ['$scope','Data',function($scope,Data){
             $scope.Data = Data;
             $scope.available = function( app ){
-                var found = Data.Apps.filter(function(a){
+                var found = Data.apps.filter(function(a){
                     return a.id == app.id;
                 });
                 return found.length==0;
