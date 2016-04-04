@@ -14,6 +14,7 @@
 	"apps": [
 		{
 			"id": 0,
+			"author": "Team Privacy",
 			"name": "Kill the ants",
 			"category": 0,
 			"icon": "ant.png",
@@ -24,6 +25,7 @@
 			}
 		},{
 			"id": 1,
+			"author": "Team Privacy",
 			"name": "Farmlife",
 			"category": 0,
 			"icon": "farm.png",
@@ -34,6 +36,7 @@
 			}
 		},{
 			"id": 2,
+			"author": "Team Privacy",
 			"name": "Dartz",
 			"category": 0,
 			"icon": "target.jpg",
@@ -44,6 +47,7 @@
 			}
 		},{
 			"id": 3,
+			"author": "Team Privacy",
 			"name": "Platforms",
 			"category": 0,
 			"icon": "platform.png",
@@ -54,6 +58,7 @@
 			}
 		},{
 			"id": 4,
+			"author": "Team Privacy",
 			"name": "Chess",
 			"category": 0,
 			"icon": "chess.png",
@@ -64,6 +69,7 @@
 			}
 		},{
 			"id": 5,
+			"author": "Team Privacy",
 			"name": "Your Weight",
 			"category": 1,
 			"icon": "scale.png",
@@ -74,6 +80,7 @@
 			}
 		},{
 			"id": 6,
+			"author": "Team Privacy",
 			"name": "Run",
 			"category": 1,
 			"icon": "run.png",
@@ -84,6 +91,7 @@
 			}
 		},{
 			"id": 7,
+			"author": "Team Privacy",
 			"name": "Your Diet",
 			"category": 1,
 			"icon": "diet.png",
@@ -94,6 +102,7 @@
 			}
 		},{
 			"id": 8,
+			"author": "Team Privacy",
 			"name": "Muscles",
 			"category": 1,
 			"icon": "muscle.png",
@@ -104,6 +113,7 @@
 			}
 		},{
 			"id": 9,
+			"author": "Team Privacy",
 			"name": "Fitness",
 			"category": 1,
 			"icon": "fitness.png",
@@ -114,6 +124,7 @@
 			}
 		},{
 			"id": 10,
+			"author": "Team Privacy",
 			"name": "Call your Friends!",
 			"category": 2,
 			"icon": "calls.png",
@@ -124,6 +135,7 @@
 			}
 		},{
 			"id": 11,
+			"author": "Team Privacy",
 			"name": "Friends!",
 			"category": 2,
 			"icon": "friends.png",
@@ -134,6 +146,7 @@
 			}
 		},{
 			"id": 12,
+			"author": "Team Privacy",
 			"name": "Share your videos!",
 			"category": 2,
 			"icon": "movie.png",
@@ -144,6 +157,7 @@
 			}
 		},{
 			"id": 13,
+			"author": "Team Privacy",
 			"name": "Share your fitness!",
 			"category": 2,
 			"icon": "dance.gif",
@@ -154,6 +168,7 @@
 			}
 		},{
 			"id": 14,
+			"author": "Team Privacy",
 			"name": "Chat Now",
 			"category": 2,
 			"icon": "chat.png",

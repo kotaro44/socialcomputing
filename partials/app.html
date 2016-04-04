@@ -28,7 +28,7 @@
 					<div class="col s12">
 						<ul class="tabs">
 							<li class="tab col s3">
-								<a class="active" href="#tab1">Description</a>
+								<a class="active" href="#tab1">Info</a>
 							</li>
 							<li class="tab col s3">
 								<a class="active" href="#tab2">Review</a>
@@ -39,11 +39,11 @@
 						</ul>
 					</div>
 					<div id="tab1" class="col s12">
-						<h4>App Description</h4>
+						<h5>App Description</h5>
 						{{app.description}}
 					</div>
 					<div id="tab2" class="col s12">
-						<h4>App Review</h4>
+						<h5>App Review</h5>
 						<div class="app-desc">
 							<span ng-class="{'privacy-rate-no': (i>=app.privacy.level) }" 
 								class="privacy-rate" ng-repeat="i in [0,1,2,3,4]">
@@ -51,7 +51,7 @@
 						</div>
 					</div>
 					<div id="tab3" class="col s12" ng-if="studyType==4||studyType==3">
-						<h4>Privacy Policy</h4>
+						<h5>Privacy Policy</h5>
 						{{app.privacy.policy}}
 					</div>
 				</div>

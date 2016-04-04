@@ -5,7 +5,8 @@ var Controllers = angular.module('socialcomputing.controllers', []);
 
 window.appNumber = 15;
 
-Controllers.controller('homeCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
+Controllers.controller('homeCtrl', ['$scope','$http','Data','Analytics',
+	function($scope,$http,Data,Analytics) {
 	$scope.inputs = {
 		privacy_policy: false,
 		name: ""
@@ -13,6 +14,8 @@ Controllers.controller('homeCtrl', ['$scope','$http','Data',function($scope,$htt
 
 	if( Data.participant.name )
 		window.location = '#/app';
+	else
+		Analytics.analyzePage('new-participant');
 
 	$scope.start = function(){
 		Data.participant.name = $scope.inputs.name;
@@ -21,13 +24,16 @@ Controllers.controller('homeCtrl', ['$scope','$http','Data',function($scope,$htt
 	};
 }]);
 
-Controllers.controller('endCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
+Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
+	function($scope,$http,Data,Analytics) {
 	$scope.surveyType = 'Z';
 
 	if( !Data.surveyA.length || !Data.surveyB.length || !Data.surveyC.length || 
 		!Data.participant.name || Data.apps.length!=window.appNumber ){
+		Analytics.analyzePage('havent-finish');
 		window.location = '#/surveyBhome';
 	}else{
+		Analytics.analyzePage('survey-complete');
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
 		Data.participant = {
 			name: ""
@@ -40,7 +46,8 @@ Controllers.controller('endCtrl', ['$scope','$http','Data',function($scope,$http
 	}
 }]);
 
-Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data',function($scope,$http,Data) {
+Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data','Analytics',
+	function($scope,$http,Data,Analytics) {
 	$scope.surveyType = window.location.href.split('#')[1].split(/(survey)|(home)/)[3];
 	switch($scope.surveyType){
 		case 'A': 
@@ -48,23 +55,30 @@ Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data',function($scop
 					window.location = '#/app';
 				else if( Data.surveyA.length )
 					window.location = '#/surveyBhome';
+				else
+					Analytics.analyzePage('survey-A-home');
 			break;
 		case 'B': 
 				if( !Data.surveyA.length )
 					window.location = '#/surveyAhome';
 				else if( Data.surveyB.length )
 					window.location = '#/surveyChome';
+				else
+					Analytics.analyzePage('survey-B-home');
 			break;
 		case 'C': 
 				if( !Data.surveyB.length )
 					window.location = '#/surveyBhome';
+				else
+					Analytics.analyzePage('survey-C-home');
 			break;
 		default: 
 			break;
 	}
 }]);
 
-Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function($scope,$http,Survey,Data) {
+Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data','Analytics',
+	function($scope,$http,Survey,Data,Analytics) {
 	$scope.surveyType = window.location.href.split('#')[1].split('survey')[1];
 	switch($scope.surveyType){
 		case 'A': 
@@ -72,16 +86,22 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function(
 					window.location = '#/app';
 				else if( Data.surveyA.length )
 					window.location = '#/surveyBhome';
+				else
+					Analytics.analyzePage('survey-A-starts');
 			break;
 		case 'B': 
 				if( !Data.surveyA.length )
 					window.location = '#/surveyAhome';
 				else if( Data.surveyB.length )
 					window.location = '#/surveyChome';
+				else
+					Analytics.analyzePage('survey-B-starts');
 			break;
 		case 'C': 
 				if( !Data.surveyB.length )
 					window.location = '#/surveyBhome';
+				else
+					Analytics.analyzePage('survey-C-starts');
 			break;
 		default: 
 			break;
@@ -124,6 +144,7 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function(
 			}
 
 			if( cont ){
+				Analytics.analyzePage('survey-' + $scope.surveyType + '-q' + $scope.survey.show );
 				$scope.newSurvey.answers.push( ans );
 				$scope.survey.show++;
 				$("input:checked").attr('checked',null);
@@ -161,7 +182,8 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data',function(
 	setTimeout($scope.check ,50);
 }]);
 
-Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey',function($scope,$http,Apps,Data,Survey) {
+Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey','Analytics',
+	function($scope,$http,Apps,Data,Survey,Analytics) {
 	$scope.studyType = Data.type;
 	$scope.Apps = Apps;
 	$scope.appsToDownload = window.appNumber;
@@ -177,10 +199,11 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey',funct
 			}else{
 				$scope.newSurvey.answers.push( ans );
 				$scope.survey.show++;
+				Analytics.analyzePage('app-'+ +'-q'+$scope.survey.show);
 				$("input:checked").attr('checked',null);
 				if( $scope.survey.show >= $scope.survey.questions.length ){
 					$scope.app.review = $scope.newSurvey.answers;
-					Data.apps.push($scope.app.review);
+					Data.apps.push($scope.app);
 
 					$scope.appId++;
 					if( parseInt($scope.appId) >= $scope.appsToDownload){
@@ -203,9 +226,7 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey',funct
 				window.location = '#/app?id=' + Data.apps.length;
 
 			$scope.survey.questions = Survey.review;
-			$scope.app = $scope.Apps.apps.filter(function( app ){
-				return app.id == $scope.appId;
-			})[0];
+			$scope.app = $scope.Apps.apps[$scope.appId];
 
 			if( !$scope.app ){
 				window.location = '#/';
@@ -225,15 +246,14 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey',funct
 		}
 	};
 
-	if( !$scope.appId ) 
+	if( !Data.participant.name ){
+		window.location = '#/home';
+	} else if( !$scope.appId ) {
 		window.location = '#/app?id=' + Data.apps.length;
-	else {
+	} else {
 		$scope.appId = parseInt($scope.appId.split('=')[1]);
-		if( parseInt($scope.appId) >= $scope.appsToDownload)
+		if( parseInt($scope.appId) >= $scope.appsToDownload){
 			window.location = "#/surveyAhome";
-
-		if( !Data.participant.name ){
-			window.location = '#/home';
 		}else{
 			setTimeout($scope.check ,50);
 		}

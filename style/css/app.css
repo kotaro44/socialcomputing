@@ -176,6 +176,31 @@ body .privacy-rate-no {
 	overflow: auto;
 }
 
+@media (min-width: 800px) {
+	.app-content .phone {
+		margin-left: -160px;
+		width: 320px;
+		height: 600px;
+	}
+
+	.app-content .screen {
+		margin-left: -115px;
+		top: 105px;;
+		width: 234px;
+		height: 435px;
+	}
+
+	.app-icon-big {
+		width: 80px;
+		height: 80px;
+		display: inline-block;
+	}
+
+	.app-header-big {
+		width: 128px;
+	}
+}
+
 html,
 body {
   height: 100%;
