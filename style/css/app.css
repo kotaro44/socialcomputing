@@ -135,8 +135,8 @@ body .privacy-rate-no {
 .app-content {
 	position: absolute;
 	z-index: 1;
-	top: 45px;
-	bottom: 48px;
+	top: 0px;
+	bottom: 0px;
 	left: 0;
 	right: 50%;
 	overflow: auto;
@@ -145,8 +145,8 @@ body .privacy-rate-no {
 .app-survey {
 	position: absolute;
 	z-index: 1;
-	top: 45px;
-	bottom: 48px;
+	top: 0px;
+	bottom: 0px;
 	left: 50%;
 	right: 0%;
 	overflow: auto;
