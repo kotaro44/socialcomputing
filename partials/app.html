@@ -11,7 +11,7 @@
 					<div class="app-icon-big" 
 						style="background-image: url(img/icons/{{app.icon}})"></div>
 					<div class="app-header-big">
-						<h5 class="app-title">{{app.name}}</h5>
+						<h6 class="app-title">{{app.name}}</h6>
 						<div ng-if="studyType==2||studyType==3">
 							<div>Privacy Critics Rating</div>
 							<div class="app-desc">
@@ -27,23 +27,29 @@
 				<div class="row">
 					<div class="col s12">
 						<ul class="tabs">
-							<li class="tab col s3">
-								<a class="active" href="#tab1">Info</a>
+							<li class="tab col s3" >
+								<a class="active" ng-click="tabChanged(this)" href="#tab1">
+									Info
+								</a>
 							</li>
 							<li class="tab col s3">
-								<a class="active" href="#tab2">Review</a>
+								<a class="active" ng-click="tabChanged(this)" href="#tab2">
+									Review
+								</a>
 							</li>
 							<li class="tab col s3" ng-if="studyType==4||studyType==3">
-								<a href="#tab3">Privacy</a>
+								<a href="#tab3" ng-click="tabChanged(this)">
+									Privacy
+								</a>
 							</li>
 						</ul>
 					</div>
 					<div id="tab1" class="col s12">
-						<h5>App Description</h5>
+						<h6>App Description</h6>
 						{{app.description}}
 					</div>
 					<div id="tab2" class="col s12">
-						<h5>App Review</h5>
+						<h6>App Review</h6>
 						<div class="app-desc">
 							<span ng-class="{'privacy-rate-no': (i>=app.privacy.level) }" 
 								class="privacy-rate" ng-repeat="i in [0,1,2,3,4]">
@@ -51,7 +57,7 @@
 						</div>
 					</div>
 					<div id="tab3" class="col s12" ng-if="studyType==4||studyType==3">
-						<h5>Privacy Policy</h5>
+						<h6>Privacy Policy</h6>
 						{{app.privacy.policy}}
 					</div>
 				</div>

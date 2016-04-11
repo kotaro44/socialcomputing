@@ -3,7 +3,7 @@
 /* Controllers */
 var Controllers = angular.module('socialcomputing.controllers', []);
 
-window.appNumber = 15;
+window.appNumber = 6;
 
 Controllers.controller('homeCtrl', ['$scope','$http','Data','Analytics',
 	function($scope,$http,Data,Analytics) {
@@ -242,8 +242,15 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey','Anal
 			$scope.$digest();
 			setTimeout(function(){
 				 $('ul.tabs').tabs();
+				 setTimeout(function(){
+					$(window).resize();
+				 },50);
 			},50)
 		}
+	};
+
+	$scope.tabChanged = function(){
+		console.log('hols');
 	};
 
 	if( !Data.participant.name ){
