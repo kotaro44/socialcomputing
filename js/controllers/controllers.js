@@ -19,6 +19,9 @@ Controllers.controller('homeCtrl', ['$scope','$http','Data','Analytics',
 
 	$scope.start = function(){
 		Data.participant.name = $scope.inputs.name;
+		Data.time = {
+			start: new Date()
+		};
 		Data.type = Math.ceil(Math.random()*4);
 		window.location = '#/app?id=0'
 	};
@@ -34,6 +37,10 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		window.location = '#/surveyBhome';
 	}else{
 		Analytics.analyzePage('survey-complete');
+		Data.time.total = (((new Date()).getTime() - Data.time.start.getTime())/1000)/60;
+		Data.time.start = Data.time.start.toString();
+
+		console.log( JSON.stringify(Data) );
 
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
 		Data.participant = {
