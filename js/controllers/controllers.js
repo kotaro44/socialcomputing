@@ -152,7 +152,10 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data','Analytic
 
 			if( cont ){
 				Analytics.analyzePage('survey-' + $scope.surveyType + '-q' + $scope.survey.show );
-				$scope.newSurvey.answers.push( ans );
+				$scope.newSurvey.answers.push( { 
+					answers: ans , 
+					type: $scope.survey.questions[$scope.survey.show].type
+				});
 				$scope.survey.show++;
 				$("input:checked").attr('checked',null);
 				if( $scope.survey.show >= $scope.survey.questions.length ){
