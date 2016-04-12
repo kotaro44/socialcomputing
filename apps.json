@@ -20,8 +20,10 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "Cute art, I like playing the games with my cousins.",
-		"review2": "Fun. Wish I could customize my avatar more."
+		"reviews": [
+			"Cute art, I like playing the games with my cousins.",
+			"Fun. Wish I could customize my avatar more."
+		]
 	}, {
 		"id": 1,
 		"author": "Crackle",
@@ -33,8 +35,10 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "Nice to kill some time on my morning commute.",
-		"review2": "Great stress reliever."
+		"reviews": [
+			"Nice to kill some time on my morning commute.",
+			"Great stress reliever."
+		]
 	}, {
 		"id": 2,
 		"author": "Toblo",
@@ -46,8 +50,10 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "Interesting app",
-		"review2": "Nice to be able to see my mood patterns and understand what triggers my anxiety"
+		"reviews": [
+			"Interesting app",
+			"Nice to be able to see my mood patterns and understand what triggers my anxiety"
+		]
 	}, {
 		"id": 3,
 		"author": "Carrie Dev",
@@ -59,8 +65,10 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "This did help me control my anxiety. I liked the exercises.",
-		"review2": "The deep breathing exercise is good. Wish I could save progress."
+		"reviews": [
+			"This did help me control my anxiety. I liked the exercises.",
+			"The deep breathing exercise is good. Wish I could save progress."
+		]
 	}, {
 		"id": 4,
 		"author": "PixieBirds",
@@ -72,8 +80,10 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "Love how I can check my FB, Insta, and Snapchat updates at the same time",
-		"review2": "Nice to not have to switch between apps but it’s not that much different from  just checking my notifications screen."
+		"reviews": [
+			"Love how I can check my FB, Insta, and Snapchat updates at the same time",
+			"Nice to not have to switch between apps but it’s not that much different from  just checking my notifications screen."
+		]
 	}, {
 		"id": 5,
 		"author": "Lyara",
@@ -85,7 +95,9 @@
 			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
 			"level": 3
 		},
-		"review1": "It makes it easier to friend people on different apps.",
-		"review2": "Cool way to add new people."
+		"reviews": [
+			"It makes it easier to friend people on different apps.",
+			"Cool way to add new people."
+		]
 	}]
 }

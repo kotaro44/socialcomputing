@@ -5,10 +5,7 @@
     easing="easeInQuint"
     offset="120">
 		<ul>
-			<li ng-repeat="app in apps" ng-if="app.category==cid&&available(app)">
-				<app-preview  app="app"></app-preview>
-				</div>
-			</li>
+			<li ng-repeat="app in apps" ng-if="app.category==cid&&available(app)"><app-preview app="app"></app-preview></li>
 		</ul>
 	</div>
 </div>

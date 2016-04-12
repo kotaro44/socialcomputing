@@ -42,10 +42,15 @@ body {
 	cursor: pointer;
 }
 
+
+.review {
+	padding-bottom: 10px;
+}
+
 .app-icon , .app-icon-big {
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 90% auto;
+	background-size: 100% auto;
 	background-color: #FFFFFF;
 	width: 100px;
 	height: 100px;
@@ -55,8 +60,8 @@ body {
 }
 
 .app-icon-big {
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	display: inline-block;
 }
 
@@ -67,22 +72,29 @@ body {
 .app-header-big {
 	vertical-align: top;
 	display: inline-block;
-	width: 160px;
+	width: 128px;
 }
 .app-header-big .app-title {
-
+	font-weight: bold;
 }
 
-.app-header-big .app-title div {
-	font-size: 1em;
+.app-header-big .app-title div , .app-header-big div , .review , .desc , .policy {
+	font-size: 0.8em;
 }
 
 .app-header-big .app-desc {
 	
 }
 
-.tabs {
+body .tabs {
 	overflow: hidden!important;
+	width: 220px!important;
+    position: relative;
+    left: -10px;
+}
+
+body .tabs .tab {
+	min-width: 20px!important;
 }
 
 .btn {
@@ -159,47 +171,24 @@ body .privacy-rate-no {
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
-	margin-left: -200px;
-	width: 400px;
-	height: 750px;
+	margin-left: -160px;
+	width: 320px;
+	height: 600px;
 }
 
 .app-content .screen {
-	padding: 15px;
+	padding: 10px;
 	left: 50%;
-	margin-left: -143px;
-	top: 131px;;
-	width: 292px;
-	height: 544px;
+	margin-left: -115px;
+	top: 105px;;
+	width: 235px;
+	height: 435px;
 	position: absolute;
 	background-color: white;
-	overflow: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
-@media (min-width: 800px) {
-	.app-content .phone {
-		margin-left: -160px;
-		width: 320px;
-		height: 600px;
-	}
-
-	.app-content .screen {
-		margin-left: -115px;
-		top: 105px;;
-		width: 234px;
-		height: 435px;
-	}
-
-	.app-icon-big {
-		width: 80px;
-		height: 80px;
-		display: inline-block;
-	}
-
-	.app-header-big {
-		width: 128px;
-	}
-}
 
 html,
 body {
