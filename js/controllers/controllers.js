@@ -43,6 +43,15 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		console.log( JSON.stringify(Data) );
 
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
+
+		var url = 'https://script.google.com/macros/s/AKfycbxOfx7_kjCDYHXfYfVzoJDIsy0WOf-GJYMgOwWc0CW7P93g3ts/exec';
+		$.get(url, {
+            "data": JSON.stringify(Data)
+        },
+        function (data) {
+        	console.log('data');
+        });
+
 		Data.participant = {
 			name: ""
 		};
@@ -167,7 +176,6 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data','Analytic
 				$("input:checked").attr('checked',null);
 				if( $scope.survey.show >= $scope.survey.questions.length ){
 					Data["survey" + $scope.surveyType] = $scope.newSurvey.answers;
-
 					switch( $scope.surveyType ){
 						case 'A':
 								window.location.href = '#/surveyBhome';
