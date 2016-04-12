@@ -34,6 +34,7 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		window.location = '#/surveyBhome';
 	}else{
 		Analytics.analyzePage('survey-complete');
+
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
 
 		var url = 'https://script.google.com/macros/s/AKfycbxOfx7_kjCDYHXfYfVzoJDIsy0WOf-GJYMgOwWc0CW7P93g3ts/exec';
@@ -64,8 +65,14 @@ Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data','Analytics',
 					window.location = '#/app';
 				else if( Data.surveyA.length )
 					window.location = '#/surveyBhome';
-				else
+				else {
+					//Order apps by Id
+					Data.apps = Data.apps.sort(function(a,b){
+						return a.id - b.id;
+					});
+					console.log(Data);
 					Analytics.analyzePage('survey-A-home');
+				}
 			break;
 		case 'B': 
 				if( !Data.surveyA.length )
@@ -154,7 +161,10 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data','Analytic
 
 			if( cont ){
 				Analytics.analyzePage('survey-' + $scope.surveyType + '-q' + $scope.survey.show );
-				$scope.newSurvey.answers.push( ans );
+				$scope.newSurvey.answers.push( { 
+					answers: ans , 
+					type: $scope.survey.questions[$scope.survey.show].type
+				});
 				$scope.survey.show++;
 				$("input:checked").attr('checked',null);
 				if( $scope.survey.show >= $scope.survey.questions.length ){
