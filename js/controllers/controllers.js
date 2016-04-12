@@ -34,6 +34,7 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		window.location = '#/surveyBhome';
 	}else{
 		Analytics.analyzePage('survey-complete');
+
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
 		Data.participant = {
 			name: ""
@@ -55,8 +56,14 @@ Controllers.controller('surveyHomeCtrl', ['$scope','$http','Data','Analytics',
 					window.location = '#/app';
 				else if( Data.surveyA.length )
 					window.location = '#/surveyBhome';
-				else
+				else {
+					//Order apps by Id
+					Data.apps = Data.apps.sort(function(a,b){
+						return a.id - b.id;
+					});
+					console.log(Data);
 					Analytics.analyzePage('survey-A-home');
+				}
 			break;
 		case 'B': 
 				if( !Data.surveyA.length )
