@@ -27,16 +27,16 @@ Services.service("Apps",function($http){
 		loading: true 
 	};
 	$http.get('apps.json').then(function(res){
-		Apps.apps = [];
-		Apps.categories = [];
-		while(res.data.apps.length){
+		Apps.apps = res.data.apps;
+		Apps.categories = res.data.categories;
+		/*while(res.data.apps.length){
 			Apps.apps.push( res.data.apps.splice(
 				Math.floor(Math.random()*res.data.apps.length),1)[0] );
 		}
 		while(res.data.categories.length){
 			Apps.categories.push( res.data.categories.splice(
 				Math.floor(Math.random()*res.data.categories.length),1)[0] ); 
-		}
+		}*/
 		delete Apps.loading;            
     });
 	return Apps;

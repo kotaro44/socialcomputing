@@ -1,49 +1,16 @@
 {
 	"categories": [{
 		"id": 0,
-		"name": "Games"
-	}, {
-		"id": 1,
 		"name": "Health"
 	}, {
-		"id": 2,
+		"id": 1,
 		"name": "Social"
 	}],
 	"apps": [{
 		"id": 0,
-		"author": "AllDogs",
-		"name": "WePlay",
-		"category": 0,
-		"icon": "weplay.png",
-		"description": "Connect with friends on social media and enjoy multiplayer minigames!",
-		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
-		},
-		"reviews": [
-			"Cute art, I like playing the games with my cousins.",
-			"Fun. Wish I could customize my avatar more."
-		]
-	}, {
-		"id": 1,
-		"author": "Crackle",
-		"name": "BubblePop",
-		"category": 0,
-		"icon": "bubblepop.png",
-		"description": "Try to pop as many bubbles on screen under the time limit! Share high scores with friends!",
-		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
-		},
-		"reviews": [
-			"Nice to kill some time on my morning commute.",
-			"Great stress reliever."
-		]
-	}, {
-		"id": 2,
 		"author": "Toblo",
 		"name": "Life Log",
-		"category": 1,
+		"category": 0,
 		"icon": "healthapp1.png",
 		"description": "Log and track your psychological health data. By entering your stress and anxiety levels over time, learn when you’re most productive or vulnerable, and whether your levels of stress are healthy or unhealthy.",
 		"privacy": {
@@ -55,10 +22,10 @@
 			"Nice to be able to see my mood patterns and understand what triggers my anxiety"
 		]
 	}, {
-		"id": 3,
+		"id": 1,
 		"author": "Carrie Dev",
 		"name": "Calm",
-		"category": 1,
+		"category": 0,
 		"icon": "healthapp2.png",
 		"description": "Guided deep breathing, meditation, and positive thinking exercises help you cope with stress.",
 		"privacy": {
@@ -70,10 +37,10 @@
 			"The deep breathing exercise is good. Wish I could save progress."
 		]
 	}, {
-		"id": 4,
+		"id": 2,
 		"author": "PixieBirds",
 		"name": "Bumble",
-		"category": 2,
+		"category": 1,
 		"icon": "bumbleitunes.png",
 		"description": "Your biggest social media feeds, all in one hive. See what your friends are buzzing about on each network!",
 		"privacy": {
@@ -85,10 +52,10 @@
 			"Nice to not have to switch between apps but it’s not that much different from  just checking my notifications screen."
 		]
 	}, {
-		"id": 5,
+		"id": 3,
 		"author": "Lyara",
 		"name": "Lync",
-		"category": 2,
+		"category": 1,
 		"icon": "lync.png",
 		"description": "Met someone great recently, but you missed the chance to connect? Use Lync’s GPS feature to find the one that got away!",
 		"privacy": {

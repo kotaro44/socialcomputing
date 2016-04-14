@@ -11,34 +11,13 @@ var app = angular.module('socialcomputing', [
 ]);
 
 app.config(['$routeProvider',function($routeProvider) {
-	$routeProvider.when('/home', {
-		templateUrl: 'partials/home.html',
-		controller: 'homeCtrl'
-	}).when('/surveyAhome', {
-		templateUrl: 'partials/home.html',
-		controller: 'surveyHomeCtrl'
-	}).when('/surveyBhome', {
-		templateUrl: 'partials/home.html',
-		controller: 'surveyHomeCtrl'
-	}).when('/surveyChome', {
-		templateUrl: 'partials/home.html',
-		controller: 'surveyHomeCtrl'
-	}).when('/app', {
+	$routeProvider.when('/:app', {
 		templateUrl: 'partials/app.html',
 		controller: 'appCtrl'
-	}).when('/end', {
-		templateUrl: 'partials/home.html',
-		controller: 'endCtrl'
-	}).when('/surveyA', {
-		templateUrl: 'partials/survey.html',
-		controller: 'surveyCtrl'
-	}).when('/surveyB', {
-		templateUrl: 'partials/survey.html',
-		controller: 'surveyCtrl'
-	}).when('/surveyC', {
-		templateUrl: 'partials/survey.html',
-		controller: 'surveyCtrl'
+	}).when('/', {
+		templateUrl: 'partials/app.html',
+		controller: 'appCtrl'
 	}).otherwise({
-		redirectTo: '/home'
+		redirectTo: '/'
 	});
 }]);

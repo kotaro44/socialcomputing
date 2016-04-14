@@ -20,10 +20,10 @@ Controllers.controller('homeCtrl', ['$scope','$http','Data','Analytics',
 	$scope.start = function(){
 		Data.participant.name = $scope.inputs.name;
 		Data.time = {
-			start: new Date()
+			s: new Date()
 		};
 		Data.type = Math.ceil(Math.random()*4);
-		window.location = '#/app?id=0'
+		window.location = '#/app?id=0';
 	};
 }]);
 
@@ -37,21 +37,20 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		window.location = '#/surveyBhome';
 	}else{
 		Analytics.analyzePage('survey-complete');
-		Data.time.total = (((new Date()).getTime() - Data.time.start.getTime())/1000)/60;
-		Data.time.start = Data.time.start.toString();
+		Data.apps = Data.apps.map(function(a){
+			return a.review;
+		});
+		Data.time.t = (((new Date()).getTime() - Data.time.s.getTime())/1000)/60;
+		Data.time.s = Data.time.s.toGMTString();
 
 		console.log( JSON.stringify(Data) );
 
 		//SEND AND DELETE DATA!!!!!!!!!!!!!!!!!!!!
 
-		var url = 'https://script.google.com/macros/s/AKfycbxOfx7_kjCDYHXfYfVzoJDIsy0WOf-GJYMgOwWc0CW7P93g3ts/exec';
-		$.get(url, {
-            "data": JSON.stringify(Data)
-        },
-        function (data) {
-        	console.log('data');
-        });
+		var url = 'https://script.google.com/macros/s/AKfycbxOfx7_kjCDYHXfYfVzoJDIsy0WOf-GJYMgOwWc0CW7P93g3ts/exec?data=' + JSON.stringify(Data);
 
+		window.open(url);
+	
 		Data.participant = {
 			name: ""
 		};
@@ -60,6 +59,7 @@ Controllers.controller('endCtrl', ['$scope','$http','Data','Analytics',
 		Data.surveyA = [];
 		Data.surveyB = [];
 		Data.surveyC = [];
+		Data.time = {};
 	}
 }]);
 
@@ -169,8 +169,8 @@ Controllers.controller('surveyCtrl', ['$scope','$http','Survey','Data','Analytic
 			if( cont ){
 				Analytics.analyzePage('survey-' + $scope.surveyType + '-q' + $scope.survey.show );
 				$scope.newSurvey.answers.push( { 
-					answers: ans , 
-					type: $scope.survey.questions[$scope.survey.show].type
+					a: ans , 
+					t: $scope.survey.questions[$scope.survey.show].type
 				});
 				$scope.survey.show++;
 				$("input:checked").attr('checked',null);
@@ -212,57 +212,15 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey','Anal
 	$scope.studyType = Data.type;
 	$scope.Apps = Apps;
 	$scope.appsToDownload = window.appNumber;
-	$scope.appId = window.location.href.split('?')[1];
-	
-	$scope.survey = {
-		questions: null,
-		show: 0,
-		submit: function(){
-			var ans = $("input[name=q" + $scope.survey.show + "]:checked").attr('index');
-			if( !ans ){
-				Materialize.toast("Please select an answer",4000);
-			}else{
-				$scope.newSurvey.answers.push( ans );
-				$scope.survey.show++;
-				Analytics.analyzePage('app-'+ +'-q'+$scope.survey.show);
-				$("input:checked").attr('checked',null);
-				if( $scope.survey.show >= $scope.survey.questions.length ){
-					$scope.app.review = $scope.newSurvey.answers;
-					Data.apps.push($scope.app);
-
-					$scope.appId++;
-					if( parseInt($scope.appId) >= $scope.appsToDownload){
-						window.location = "#/surveyAhome";
-					}else{
-						window.location = "#/app?id=" + $scope.appId;
-					}
-				}
-			}
-		}
-	};
+	$scope.appId = parseInt(window.location.href.match(/\#\/([0-9]*)/)[1]);
 
 	$scope.check = function(){
 		if( Apps.loading || Survey.loading ){
 			setTimeout($scope.check ,50);
 		}else{
-			
-
-			if( parseInt($scope.appId) != Data.apps.length )
-				window.location = '#/app?id=' + Data.apps.length;
-
-			$scope.survey.questions = Survey.review;
+			$scope.type = Math.floor(($scope.appId-1)%$scope.Apps.apps.length);
+			$scope.appId = Math.floor(($scope.appId-1)/$scope.Apps.apps.length);
 			$scope.app = $scope.Apps.apps[$scope.appId];
-
-			if( !$scope.app ){
-				window.location = '#/';
-			}
-			$scope.newApp = {
-				"id": $scope.app.id,
-				"downloaded": false
-			}
-			$scope.newSurvey = {
-				"answers": []
-			};
 
 			$scope.$digest();
 			setTimeout(function(){
@@ -278,16 +236,9 @@ Controllers.controller('appCtrl', ['$scope','$http','Apps','Data','Survey','Anal
 		console.log('hols');
 	};
 
-	if( !Data.participant.name ){
-		window.location = '#/home';
-	} else if( !$scope.appId ) {
-		window.location = '#/app?id=' + Data.apps.length;
-	} else {
-		$scope.appId = parseInt($scope.appId.split('=')[1]);
-		if( parseInt($scope.appId) >= $scope.appsToDownload){
-			window.location = "#/surveyAhome";
-		}else{
-			setTimeout($scope.check ,50);
-		}
+	if( !$scope.appId || $scope.appId > 16 ){
+		window.location = '#/1';
+	}else{
+		setTimeout($scope.check ,50);	
 	}
 }]);
