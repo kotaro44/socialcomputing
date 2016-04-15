@@ -4,23 +4,13 @@
 		<div class="phone"></div>
 		<div class="container screen">
 			<!--APP DETAIL-->
-
 				<div class="row">
 					<div class="app-icon-big" 
 						style="background-image: url(img/icons/{{app.icon}})"></div>
 					<div class="app-header-big">
-						<h6 class="app-title">{{app.name}}</h6>
-						<div ng-if="studyType==2||studyType==3">
-							<div>Privacy Critics Rating</div>
-							<div class="app-desc">
-								<span ng-class="{'privacy-rate-no': (i>=app.privacy.level) }" 
-									class="privacy-rate" ng-repeat="i in [0,1,2,3,4]">
-								</span>
-							</div>
-						</div>
+						<h5 class="app-title">{{app.name}}</h5>
 					</div>
 				</div>
-
 
 				<div class="row">
 					<div class="col s12">
@@ -35,7 +25,7 @@
 									Reviews
 								</a>
 							</li>
-							<li class="tab col s3" ng-if="studyType==4||studyType==3">
+							<li class="tab col s3">
 								<a href="#tab3" ng-click="tabChanged(this)">
 									Privacy
 								</a>
@@ -52,9 +42,44 @@
 							{{review}}
 						</div>
 					</div>
-					<div id="tab3" class="col s12" ng-if="studyType==4||studyType==3">
+					<div id="tab3" class="col s12">
 						<br/>
-						<div class="policy" >{{app.privacy.policy}}</div>
+						<div class="noeye-icon" ng-if="type==2"></div>
+						<div class="eye-icon" ng-if="type==3"></div>
+						<div class="policy" ng-if="type==0||type==2">
+							{{app.privacy.policy.positive}}
+						</div>
+						<div class="policy" ng-if="type==1">
+							{{app.privacy.policy.negative}}
+						</div>
+						<div class="share-view" ng-if="type==3">
+							<div class="row s12">
+								<div class="col s1"></div>
+								<div class="col s11">
+									This app may share your data with:
+								</div>
+							</div>
+							<div class="row s12 valign-wrapper">
+								<div class="col s1"></div>
+								<div class="share-icon third-parties col s3"></div>
+								<div class="share-text col s8 valign">Third Parties</div>
+							</div>
+							<div class="row s12 valign-wrapper">
+								<div class="col s1"></div>
+								<div class="share-icon developpers col s3"></div>
+								<div class="share-text col s8 valign">Developpers</div>
+							</div>
+							<div class="row s12 valign-wrapper">
+								<div class="col s1"></div>
+								<div class="share-icon academic col s3"></div>
+								<div class="share-text col s8 valign">Academic Institutions</div>
+							</div>
+							<div class="row s12 valign-wrapper">
+								<div class="col s1"></div>
+								<div class="share-icon friends col s3"></div>
+								<div class="share-text col s8 valign">Friends of Friends</div>
+							</div>
+						</div>
 					</div>
 				</div>
 

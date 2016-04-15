@@ -14,8 +14,10 @@
 		"icon": "healthapp1.png",
 		"description": "Log and track your psychological health data. By entering your stress and anxiety levels over time, learn when you’re most productive or vulnerable, and whether your levels of stress are healthy or unhealthy.",
 		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
+			"policy": {
+				"positive": "Your data is not shared with any other parties unless you permit access to the data.",
+				"negative": "This app may share your data with developers, third parties (advertisers), academic institutions, and friends of your friends on the app . "
+			}
 		},
 		"reviews": [
 			"Interesting app",
@@ -29,8 +31,10 @@
 		"icon": "healthapp2.png",
 		"description": "Guided deep breathing, meditation, and positive thinking exercises help you cope with stress.",
 		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
+			"policy": {
+				"positive": "Your data is not shared with any other parties unless you permit access to the data.",
+				"negative": "This app may share your data with developers, third parties (advertisers), academic institutions, and friends of your friends on the app . "
+			}
 		},
 		"reviews": [
 			"This did help me control my anxiety. I liked the exercises.",
@@ -44,8 +48,10 @@
 		"icon": "bumbleitunes.png",
 		"description": "Your biggest social media feeds, all in one hive. See what your friends are buzzing about on each network!",
 		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
+			"policy": {
+				"positive": "Your data is not shared with any other parties unless you permit access to the data.",
+				"negative": "This app may share your data with developers, third parties (advertisers), academic institutions, and friends of your friends on the app . "
+			}
 		},
 		"reviews": [
 			"Love how I can check my FB, Insta, and Snapchat updates at the same time",
@@ -59,8 +65,10 @@
 		"icon": "lync.png",
 		"description": "Met someone great recently, but you missed the chance to connect? Use Lync’s GPS feature to find the one that got away!",
 		"privacy": {
-			"policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis ultricies neque id convallis. Maecenas commodo vestibulum leo, eu tristique massa ultrices egestas. ",
-			"level": 3
+			"policy": {
+				"positive": "Your data is not shared with any other parties unless you permit access to the data.",
+				"negative": "This app may share your data with developers, third parties (advertisers), academic institutions, and friends of your friends on the app . "
+			}
 		},
 		"reviews": [
 			"It makes it easier to friend people on different apps.",
