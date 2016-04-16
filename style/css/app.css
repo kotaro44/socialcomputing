@@ -200,6 +200,7 @@ body {
 
 .eye-icon {
 	background-image: url(../../img/icons/2eyes.png);
+    height: 50px;
 }
 
 .noeye-icon {
@@ -237,4 +238,15 @@ body {
 
 .academic {
 	background-image: url(../../img/icons/academicinstitutions.png);
+}
+
+#tab3 div {
+    margin-bottom: 0px;
+    font-size: 13.5px;
+}
+
+
+.eye-icon {
+    height: 30px;
+    background-position: 
 }
